@@ -2,9 +2,10 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 const VerticalButtons = (props) => {
-  const { text, innerColor, textColor } = props;
+  const { text, innerColor, textColor, onPressHandler } = props;
   return (
     <TouchableOpacity
+      onPress={onPressHandler}
       style={[styles.buttoncontainer, { backgroundColor: innerColor }]}
     >
       <Text style={[styles.number, { color: textColor }]}>{text}</Text>

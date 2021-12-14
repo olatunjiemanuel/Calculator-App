@@ -9,6 +9,10 @@ import HorizontalButtons from "./components/Buttons/HorizontaButtons";
 import VerticalButtons from "./components/Buttons/VerticalButtons";
 
 export default function App() {
+  const AcButton = () => {
+    console.log("Ac");
+  };
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
       <View style={styles.container}>
@@ -18,7 +22,7 @@ export default function App() {
               style={{
                 borderWidth: 5,
                 borderColor: "red",
-                marginTop: 138,
+                marginTop: 108,
                 width: 183,
                 height: 36,
                 marginLeft: 125,
@@ -65,6 +69,7 @@ export default function App() {
             <View style={{ flexDirection: "row", marginTop: 16 }}>
               <View>
                 <NumberButtons
+                  onPressHandler={AcButton}
                   text="Ac"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -218,6 +223,6 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 34,
     flexDirection: "column",
-    backgroundColor: "green",
+    backgroundColor: "black",
   },
 });
