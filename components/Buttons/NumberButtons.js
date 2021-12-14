@@ -1,17 +1,19 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-const NumberButtons = () => {
+const NumberButtons = (props) => {
+  const { text, innerColor, textColor } = props;
   return (
-    <TouchableOpacity style={styles.buttoncontainer}>
-      <Text style={styles.number}>9</Text>
+    <TouchableOpacity
+      style={[styles.buttoncontainer, { backgroundColor: innerColor }]}
+    >
+      <Text style={[styles.number, { color: textColor }]}>{text}</Text>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   buttoncontainer: {
-    backgroundColor: "#303136",
     width: 62,
     height: 60,
     alignItems: "center",
@@ -19,13 +21,13 @@ const styles = StyleSheet.create({
     borderRadius: 16,
   },
   number: {
-    color: "#29A8FF",
-    width: 20,
+    width: 35,
     height: 48,
     fontWeight: "500",
     fontSize: 32,
     lineHeight: 48,
     marginTop: 6,
+    textAlign: "center",
   },
 });
 

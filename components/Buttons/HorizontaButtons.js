@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-const SpecialFunctionsButtons = (props) => {
+const HorizontalButtons = (props) => {
   const { text, innerColor, textColor } = props;
   return (
     <TouchableOpacity
@@ -14,21 +14,20 @@ const SpecialFunctionsButtons = (props) => {
 
 const styles = StyleSheet.create({
   buttoncontainer: {
-    width: 62,
-    height: 40,
+    width: 144,
+    height: 60,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 24,
+    borderRadius: 16,
   },
   number: {
-    width: 33.53,
+    width: 20,
     height: 48,
     fontWeight: "500",
-    fontSize: 20,
+    fontSize: 32,
     lineHeight: 48,
     marginTop: 6,
-    textAlign: "center",
   },
 });
 
-export default SpecialFunctionsButtons;
+export default HorizontalButtons;
