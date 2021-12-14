@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native";
 
 //components imoports
@@ -7,38 +7,41 @@ import NumberButtons from "./components/Buttons/NumberButtons";
 import SpecialFunctionsButtons from "./components/Buttons/SpecialFunctionsButtons";
 import HorizontalButtons from "./components/Buttons/HorizontaButtons";
 import VerticalButtons from "./components/Buttons/VerticalButtons";
+import CalculatorDisplay from "./components/CalculatorDisplay";
 
 export default function App() {
+  const [render, setrender] = useState("");
+  const [render2, setrender2] = useState("");
+
   const AcButton = () => {
-    console.log("Ac");
+    setrender("Ac" + render);
+    console.log("Ac" + render);
+  };
+
+  const DelButton = () => {
+    setrender("");
+    setrender2("");
+  };
+
+  const SlashButton = () => {
+    setrender2("=" + "Ac" + render2);
+    console.log("Ac" + render2);
   };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
       <View style={styles.container}>
         <View>
-          <View>
-            <TextInput
-              style={{
-                borderWidth: 5,
-                borderColor: "red",
-                marginTop: 108,
-                width: 183,
-                height: 36,
-                marginLeft: 125,
-              }}
-            />
-          </View>
-          <View>
-            <TextInput
-              style={{
-                borderWidth: 5,
-                borderColor: "red",
-                width: 186,
-                height: 72,
-                marginLeft: 125,
-              }}
-            />
+          <View
+            style={{
+              marginTop: 180,
+              width: 183,
+              height: 36,
+              borderWidth: 5,
+              justifyContent: "flex-end",
+            }}
+          >
+            <CalculatorDisplay Calctext={render} Calctext2={render2} />
           </View>
         </View>
         <View style={{ flexDirection: "row", marginTop: 78 }}>
@@ -77,6 +80,7 @@ export default function App() {
               </View>
               <View style={{ marginLeft: 20 }}>
                 <NumberButtons
+                  onPressHandler={DelButton}
                   text="del"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -84,6 +88,7 @@ export default function App() {
               </View>
               <View style={{ marginLeft: 20 }}>
                 <NumberButtons
+                  onPressHandler={SlashButton}
                   text="/"
                   innerColor="#005DB2"
                   textColor="#339DFF"
