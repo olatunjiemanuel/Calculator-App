@@ -62,7 +62,7 @@ export default function App() {
                 />
               </View>
             </View>
-            <View style={{ flexDirection: "row" }}>
+            <View style={{ flexDirection: "row", marginTop: 16 }}>
               <View>
                 <NumberButtons
                   text="Ac"
@@ -85,68 +85,90 @@ export default function App() {
                 />
               </View>
             </View>
-            <View style={{ flexDirection: "row" }}>
-              <NumberButtons
-                text="7"
-                innerColor="#303136"
-                textColor="#29A8FF"
-              />
-              <NumberButtons
-                text="8"
-                innerColor="#303136"
-                textColor="#29A8FF"
-              />
-              <NumberButtons
-                text="9"
-                innerColor="#303136"
-                textColor="#29A8FF"
-              />
+            <View style={{ flexDirection: "row", marginTop: 22 }}>
+              <View>
+                <NumberButtons
+                  text="7"
+                  innerColor="#303136"
+                  textColor="#29A8FF"
+                />
+              </View>
+              <View style={{ marginLeft: 20 }}>
+                <NumberButtons
+                  text="8"
+                  innerColor="#303136"
+                  textColor="#29A8FF"
+                />
+              </View>
+              <View style={{ marginLeft: 20 }}>
+                <NumberButtons
+                  text="9"
+                  innerColor="#303136"
+                  textColor="#29A8FF"
+                />
+              </View>
             </View>
-            <View style={{ flexDirection: "row" }}>
-              <NumberButtons
-                text="4"
-                innerColor="#303136"
-                textColor="#29A8FF"
-              />
-              <NumberButtons
-                text="5"
-                innerColor="#303136"
-                textColor="#29A8FF"
-              />
-              <NumberButtons
-                text="6"
-                innerColor="#303136"
-                textColor="#29A8FF"
-              />
+            <View style={{ flexDirection: "row", marginTop: 16 }}>
+              <View>
+                <NumberButtons
+                  text="4"
+                  innerColor="#303136"
+                  textColor="#29A8FF"
+                />
+              </View>
+              <View style={{ marginLeft: 20 }}>
+                <NumberButtons
+                  text="5"
+                  innerColor="#303136"
+                  textColor="#29A8FF"
+                />
+              </View>
+              <View style={{ marginLeft: 20 }}>
+                <NumberButtons
+                  text="6"
+                  innerColor="#303136"
+                  textColor="#29A8FF"
+                />
+              </View>
             </View>
-            <View style={{ flexDirection: "row" }}>
-              <NumberButtons
-                text="1"
-                innerColor="#303136"
-                textColor="#29A8FF"
-              />
-              <NumberButtons
-                text="2"
-                innerColor="#303136"
-                textColor="#29A8FF"
-              />
-              <NumberButtons
-                text="3"
-                innerColor="#303136"
-                textColor="#29A8FF"
-              />
+            <View style={{ flexDirection: "row", marginTop: 16 }}>
+              <View>
+                <NumberButtons
+                  text="1"
+                  innerColor="#303136"
+                  textColor="#29A8FF"
+                />
+              </View>
+              <View style={{ marginLeft: 20 }}>
+                <NumberButtons
+                  text="2"
+                  innerColor="#303136"
+                  textColor="#29A8FF"
+                />
+              </View>
+              <View style={{ marginLeft: 20 }}>
+                <NumberButtons
+                  text="3"
+                  innerColor="#303136"
+                  textColor="#29A8FF"
+                />
+              </View>
             </View>
-            <View style={{ flexDirection: "row" }}>
-              <HorizontalButtons
-                text="0"
-                innerColor="#303136"
-                textColor="#29A8FF"
-              />
-              <NumberButtons
-                text="."
-                innerColor="#303136"
-                textColor="#29A8FF"
-              />
+            <View style={{ flexDirection: "row", marginTop: 16 }}>
+              <>
+                <HorizontalButtons
+                  text="0"
+                  innerColor="#303136"
+                  textColor="#29A8FF"
+                />
+              </>
+              <View style={{ marginLeft: 20 }}>
+                <NumberButtons
+                  text="."
+                  innerColor="#303136"
+                  textColor="#29A8FF"
+                />
+              </View>
             </View>
           </View>
           <View style={{ marginLeft: 20 }}>
@@ -157,14 +179,14 @@ export default function App() {
                 textColor="#29A8FF"
               />
             </View>
-            <View style={{ marginTop: 16 }}>
+            <View style={{ marginTop: 18 }}>
               <NumberButtons
                 text="*"
                 innerColor="#005DB2"
                 textColor="#339DFF"
               />
             </View>
-            <View style={{ marginTop: 16 }}>
+            <View style={{ marginTop: 22 }}>
               <NumberButtons
                 text="-"
                 innerColor="#005DB2"
@@ -187,9 +209,6 @@ export default function App() {
             </View>
           </View>
         </View>
-        {/* <NumberButtons text="9" innerColor="#303136" textColor="#29A8FF" />
-        <HorizontalButtons text="9" innerColor="#303136" textColor="#29A8FF" />
-        <VerticalButtons text="9" innerColor="#303136" textColor="#29A8FF" /> */}
       </View>
     </SafeAreaView>
   );
