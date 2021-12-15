@@ -12,18 +12,22 @@ import CalculatorDisplay from "./components/CalculatorDisplay";
 export default function App() {
   const [render, setrender] = useState("");
   const [render2, setrender2] = useState("");
+  const [value1, setvalue1] = useState();
+  const [value2, setvalue2] = useState();
+  const [operator, setoperator] = useState();
+  const [ACtext, setACttext] = useState("Ac");
 
   const AcButton = () => {
+    setACttext("Ac");
     setrender("");
     setrender2("");
   };
-
-  const DelButton = () => {};
-
-  const DivideButton = () => {
-    setrender(render + "/");
+  const DelButton = () => {
+    setrender("");
+    setrender2("");
+    setvalue1("");
+    setvalue2("");
   };
-
   const EButton = () => {
     setrender(render + "e");
   };
@@ -33,38 +37,58 @@ export default function App() {
   const SinButton = () => {
     setrender(render + "Sin");
   };
-
   const Button7 = () => {
+    setACttext("C");
     setrender(render + 7);
+    setvalue1(value1 + "7");
   };
   const Button8 = () => {
+    setACttext("C");
     setrender(render + 8);
+    setvalue1(value1 + "8");
   };
   const Button9 = () => {
+    setACttext("C");
     setrender(render + 9);
+    setvalue1(value1 + "9");
   };
   const Button4 = () => {
+    setACttext("C");
     setrender(render + 4);
+    setvalue1(value1 + "4");
   };
   const Button5 = () => {
+    setACttext("C");
     setrender(render + 5);
+    setvalue1(value1 + "5");
   };
   const Button6 = () => {
+    setACttext("C");
     setrender(render + 6);
+    setvalue1(value1 + "6");
   };
   const Button1 = () => {
+    setACttext("C");
     setrender(render + 1);
+    setvalue1(value1 + "1");
   };
   const Button2 = () => {
+    setACttext("C");
     setrender(render + 2);
+    setvalue1(value1 + "2");
   };
   const Button3 = () => {
+    setACttext("C");
     setrender(render + 3);
+    setvalue1(value1 + "3");
   };
   const Button0 = () => {
+    setACttext("C");
     setrender(render + 0);
+    setvalue1(value1 + "0");
   };
   const PeriodButton = () => {
+    setACttext("C");
     setrender(render + ".");
   };
 
@@ -72,16 +96,50 @@ export default function App() {
     setrender(render + "deg");
   };
   const MultiplyButton = () => {
+    setoperator("*");
     setrender(render + "*");
+    setvalue2(value1);
+    setvalue1("");
   };
   const SubtractButton = () => {
+    setoperator("-");
     setrender(render + "-");
+    setvalue2(value1);
+    setvalue1("");
   };
   const AddButton = () => {
+    setoperator("+");
     setrender(render + "+");
+    setvalue2(value1);
+    setvalue1("");
+  };
+  const DivideButton = () => {
+    setoperator("/");
+    setrender(render + "/");
+    setvalue2(value1);
+    setvalue1("");
   };
   const EqualsButton = () => {
-    setrender2(render2 + "=");
+    // let value1 = render.slice(0, 1);
+    // let operator = render.slice(1, 2);
+    // let value2 = render.slice(2, 3);
+    console.log(value1);
+    console.log(value2);
+    if (operator == "+") {
+      let answer = parseFloat(value1) + parseFloat(value2);
+      setrender2(render2 + "=" + answer);
+    } else if (operator == "-") {
+      let answer = parseFloat(value2) - parseFloat(value1);
+      setrender2(render2 + "=" + answer);
+    } else if (operator == "*") {
+      let answer = parseFloat(value1) * parseFloat(value2);
+      setrender2(render2 + "=" + answer);
+    } else if (operator == "/") {
+      let answer = parseFloat(value2) / parseFloat(value1);
+      setrender2(render2 + "=" + answer);
+    } else {
+      null;
+    }
   };
 
   return (
@@ -132,7 +190,7 @@ export default function App() {
               <View>
                 <NumberButtons
                   onPressHandler={AcButton}
-                  text="Ac"
+                  text={ACtext}
                   innerColor="#303136"
                   textColor="#29A8FF"
                 />
