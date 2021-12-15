@@ -13,8 +13,6 @@ const CalculatorDisplay = (props) => {
         style={{
           width: 183,
           height: 36,
-          borderWidth: 5,
-          borderColor: "red",
           marginLeft: 125,
           justifyContent: "flex-end",
         }}
@@ -31,8 +29,6 @@ const CalculatorDisplay = (props) => {
       </View>
       <View
         style={{
-          borderWidth: 5,
-          borderColor: "red",
           marginLeft: 125,
           width: 183,
           height: 72,

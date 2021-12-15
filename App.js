@@ -18,8 +18,7 @@ export default function App() {
   //const [ACtext, setACttext] = useState("Ac");
 
   const AcButton = () => {
-    //setACttext("Ac");
-    setvalue1(null);
+    setvalue1("");
     setrender("");
     setrender2("");
   };
@@ -130,6 +129,7 @@ export default function App() {
     } else {
       null;
     }
+    setrender("");
   };
 
   return (
