@@ -12,13 +12,14 @@ import CalculatorDisplay from "./components/CalculatorDisplay";
 export default function App() {
   const [render, setrender] = useState("");
   const [render2, setrender2] = useState("");
-  const [value1, setvalue1] = useState();
+  const [value1, setvalue1] = useState(null);
   const [value2, setvalue2] = useState();
   const [operator, setoperator] = useState();
-  const [ACtext, setACttext] = useState("Ac");
+  //const [ACtext, setACttext] = useState("Ac");
 
   const AcButton = () => {
-    setACttext("Ac");
+    //setACttext("Ac");
+    setvalue1(null);
     setrender("");
     setrender2("");
   };
@@ -38,57 +39,46 @@ export default function App() {
     setrender(render + "Sin");
   };
   const Button7 = () => {
-    setACttext("C");
     setrender(render + 7);
     setvalue1(value1 + "7");
   };
   const Button8 = () => {
-    setACttext("C");
     setrender(render + 8);
     setvalue1(value1 + "8");
   };
   const Button9 = () => {
-    setACttext("C");
     setrender(render + 9);
     setvalue1(value1 + "9");
   };
   const Button4 = () => {
-    setACttext("C");
     setrender(render + 4);
     setvalue1(value1 + "4");
   };
   const Button5 = () => {
-    setACttext("C");
     setrender(render + 5);
     setvalue1(value1 + "5");
   };
   const Button6 = () => {
-    setACttext("C");
     setrender(render + 6);
     setvalue1(value1 + "6");
   };
   const Button1 = () => {
-    setACttext("C");
     setrender(render + 1);
     setvalue1(value1 + "1");
   };
   const Button2 = () => {
-    setACttext("C");
     setrender(render + 2);
     setvalue1(value1 + "2");
   };
   const Button3 = () => {
-    setACttext("C");
     setrender(render + 3);
     setvalue1(value1 + "3");
   };
   const Button0 = () => {
-    setACttext("C");
     setrender(render + 0);
     setvalue1(value1 + "0");
   };
   const PeriodButton = () => {
-    setACttext("C");
     setrender(render + ".");
   };
 
@@ -190,7 +180,7 @@ export default function App() {
               <View>
                 <NumberButtons
                   onPressHandler={AcButton}
-                  text={ACtext}
+                  text={value1 ? "C" : "AC"}
                   innerColor="#303136"
                   textColor="#29A8FF"
                 />
