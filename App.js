@@ -114,22 +114,23 @@ export default function App() {
     // let value2 = render.slice(2, 3);
     console.log(value1);
     console.log(value2);
-    if (operator == "+") {
-      let answer = parseFloat(value1) + parseFloat(value2);
-      setrender2(render2 + "=" + answer);
-    } else if (operator == "-") {
-      let answer = parseFloat(value2) - parseFloat(value1);
-      setrender2(render2 + "=" + answer);
-    } else if (operator == "*") {
-      let answer = parseFloat(value1) * parseFloat(value2);
-      setrender2(render2 + "=" + answer);
-    } else if (operator == "/") {
-      let answer = parseFloat(value2) / parseFloat(value1);
-      setrender2(render2 + "=" + answer);
-    } else {
-      null;
-    }
+    // if (operator == "+") {
+    //   let answer = parseFloat(value1) + parseFloat(value2);
+    //   setrender2(render2 + "=" + answer);
+    // } else if (operator == "-") {
+    //   let answer = parseFloat(value2) - parseFloat(value1);
+    //   setrender2(render2 + "=" + answer);
+    // } else if (operator == "*") {
+    //   let answer = parseFloat(value1) * parseFloat(value2);
+    //   setrender2(render2 + "=" + answer);
+    // } else if (operator == "/") {
+    //   let answer = parseFloat(value2) / parseFloat(value1);
+    //   setrender2(render2 + "=" + answer);
+    // } else {
+    //   null;
+    // }
     setrender("");
+    setrender2(eval(render));
   };
 
   return (
