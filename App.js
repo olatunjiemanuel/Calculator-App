@@ -39,43 +39,43 @@ export default function App() {
   };
   const Button7 = () => {
     setrender(render + 7);
-    setvalue1(value1 + "7");
+    //setvalue1(value1 + "7");
   };
   const Button8 = () => {
     setrender(render + 8);
-    setvalue1(value1 + "8");
+    //setvalue1(value1 + "8");
   };
   const Button9 = () => {
     setrender(render + 9);
-    setvalue1(value1 + "9");
+    //setvalue1(value1 + "9");
   };
   const Button4 = () => {
     setrender(render + 4);
-    setvalue1(value1 + "4");
+    //setvalue1(value1 + "4");
   };
   const Button5 = () => {
     setrender(render + 5);
-    setvalue1(value1 + "5");
+    //setvalue1(value1 + "5");
   };
   const Button6 = () => {
     setrender(render + 6);
-    setvalue1(value1 + "6");
+    //setvalue1(value1 + "6");
   };
   const Button1 = () => {
     setrender(render + 1);
-    setvalue1(value1 + "1");
+    //setvalue1(value1 + "1");
   };
   const Button2 = () => {
     setrender(render + 2);
-    setvalue1(value1 + "2");
+    //setvalue1(value1 + "2");
   };
   const Button3 = () => {
     setrender(render + 3);
-    setvalue1(value1 + "3");
+    //setvalue1(value1 + "3");
   };
   const Button0 = () => {
     setrender(render + 0);
-    setvalue1(value1 + "0");
+    //setvalue1(value1 + "0");
   };
   const PeriodButton = () => {
     setrender(render + ".");

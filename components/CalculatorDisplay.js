@@ -36,7 +36,7 @@ const CalculatorDisplay = (props) => {
       >
         <Text
           style={{
-            color: "#818181",
+            color: "#fff",
             textAlign: "right",
             fontSize: 48,
           }}
