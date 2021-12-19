@@ -14,8 +14,6 @@ export default function App() {
   const [render2, setrender2] = useState("");
   const [value1, setvalue1] = useState(null);
   const [value2, setvalue2] = useState();
-  const [operator, setoperator] = useState();
-  //const [ACtext, setACttext] = useState("Ac");
 
   const AcButton = () => {
     setvalue1("");
@@ -28,109 +26,77 @@ export default function App() {
     setvalue1("");
     setvalue2("");
   };
-  const EButton = () => {
-    setrender(render + "e");
+  const CosButton = () => {
+    setrender2("=" + Math.cos(render));
   };
-  const UButton = () => {
-    setrender(render + "u");
+  const TanButton = () => {
+    setrender2("=" + Math.tan(render));
   };
   const SinButton = () => {
-    setrender(render + "Sin");
+    setrender2("=" + Math.sin(render));
   };
   const Button7 = () => {
     setrender(render + 7);
-    //setvalue1(value1 + "7");
   };
   const Button8 = () => {
     setrender(render + 8);
-    //setvalue1(value1 + "8");
   };
   const Button9 = () => {
     setrender(render + 9);
-    //setvalue1(value1 + "9");
   };
   const Button4 = () => {
     setrender(render + 4);
-    //setvalue1(value1 + "4");
   };
   const Button5 = () => {
     setrender(render + 5);
-    //setvalue1(value1 + "5");
   };
   const Button6 = () => {
     setrender(render + 6);
-    //setvalue1(value1 + "6");
   };
   const Button1 = () => {
     setrender(render + 1);
-    //setvalue1(value1 + "1");
   };
   const Button2 = () => {
     setrender(render + 2);
-    //setvalue1(value1 + "2");
   };
   const Button3 = () => {
     setrender(render + 3);
-    //setvalue1(value1 + "3");
   };
   const Button0 = () => {
     setrender(render + 0);
-    //setvalue1(value1 + "0");
   };
   const PeriodButton = () => {
     setrender(render + ".");
   };
 
-  const DegreeButton = () => {
-    setrender(render + "deg");
+  const sqrtButton = () => {
+    setrender2("=" + Math.sqrt(render));
   };
   const MultiplyButton = () => {
-    setoperator("*");
     setrender(render + "*");
     setvalue2(value1);
     setvalue1("");
   };
   const SubtractButton = () => {
-    setoperator("-");
     setrender(render + "-");
     setvalue2(value1);
     setvalue1("");
   };
   const AddButton = () => {
-    setoperator("+");
     setrender(render + "+");
     setvalue2(value1);
     setvalue1("");
   };
   const DivideButton = () => {
-    setoperator("/");
     setrender(render + "/");
     setvalue2(value1);
     setvalue1("");
   };
   const EqualsButton = () => {
-    // let value1 = render.slice(0, 1);
-    // let operator = render.slice(1, 2);
-    // let value2 = render.slice(2, 3);
     console.log(value1);
     console.log(value2);
-    // if (operator == "+") {
-    //   let answer = parseFloat(value1) + parseFloat(value2);
-    //   setrender2(render2 + "=" + answer);
-    // } else if (operator == "-") {
-    //   let answer = parseFloat(value2) - parseFloat(value1);
-    //   setrender2(render2 + "=" + answer);
-    // } else if (operator == "*") {
-    //   let answer = parseFloat(value1) * parseFloat(value2);
-    //   setrender2(render2 + "=" + answer);
-    // } else if (operator == "/") {
-    //   let answer = parseFloat(value2) / parseFloat(value1);
-    //   setrender2(render2 + "=" + answer);
-    // } else {
-    //   null;
-    // }
     setrender("");
-    setrender2(eval(render));
+    setrender2("=" + eval(render));
   };
 
   return (
@@ -154,16 +120,16 @@ export default function App() {
             <View style={{ flexDirection: "row" }}>
               <View>
                 <SpecialFunctionsButtons
-                  onPressHandler={EButton}
-                  text="e"
+                  onPressHandler={CosButton}
+                  text="Cos"
                   innerColor="#303136"
                   textColor="#29A8FF"
                 />
               </View>
               <View style={{ marginLeft: 20 }}>
                 <SpecialFunctionsButtons
-                  onPressHandler={UButton}
-                  text="u"
+                  onPressHandler={TanButton}
+                  text="Tan"
                   innerColor="#303136"
                   textColor="#29A8FF"
                 />
@@ -181,7 +147,7 @@ export default function App() {
               <View>
                 <NumberButtons
                   onPressHandler={AcButton}
-                  text={value1 ? "C" : "AC"}
+                  text={render !== "" ? "C" : "Ac"}
                   innerColor="#303136"
                   textColor="#29A8FF"
                 />
@@ -303,8 +269,8 @@ export default function App() {
           <View style={{ marginLeft: 20 }}>
             <View>
               <SpecialFunctionsButtons
-                onPressHandler={DegreeButton}
-                text="deg"
+                onPressHandler={sqrtButton}
+                text="Sqrt"
                 innerColor="#303136"
                 textColor="#29A8FF"
               />

@@ -29,8 +29,8 @@ const CalculatorDisplay = (props) => {
       </View>
       <View
         style={{
-          marginLeft: 125,
-          width: 183,
+          marginLeft: 10,
+          width: 300,
           height: 72,
         }}
       >
