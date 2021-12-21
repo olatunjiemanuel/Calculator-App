@@ -1,0 +1,53 @@
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+
+const CalculatorDisplay = (props) => {
+  const { Calctext, Calctext2 } = props;
+  return (
+    <View
+      style={{
+        flexDirection: "column",
+      }}
+    >
+      <View
+        style={{
+          width: 183,
+          height: 36,
+          marginLeft: 125,
+          justifyContent: "flex-end",
+        }}
+      >
+        <Text
+          style={{
+            color: "#818181",
+            textAlign: "right",
+            fontSize: 24,
+          }}
+        >
+          {Calctext}
+        </Text>
+      </View>
+      <View
+        style={{
+          marginLeft: 10,
+          width: 300,
+          height: 72,
+        }}
+      >
+        <Text
+          style={{
+            color: "#fff",
+            textAlign: "right",
+            fontSize: 48,
+          }}
+        >
+          {Calctext2}
+        </Text>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({});
+
+export default CalculatorDisplay;

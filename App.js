@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native";
 
 //components imoports
@@ -7,38 +7,112 @@ import NumberButtons from "./components/Buttons/NumberButtons";
 import SpecialFunctionsButtons from "./components/Buttons/SpecialFunctionsButtons";
 import HorizontalButtons from "./components/Buttons/HorizontaButtons";
 import VerticalButtons from "./components/Buttons/VerticalButtons";
+import CalculatorDisplay from "./components/CalculatorDisplay";
 
 export default function App() {
+  const [render, setrender] = useState("");
+  const [render2, setrender2] = useState("");
+  const [value1, setvalue1] = useState(null);
+  const [value2, setvalue2] = useState();
+
   const AcButton = () => {
-    console.log("Ac");
+    setvalue1("");
+    setrender("");
+    setrender2("");
+  };
+  const DelButton = () => {
+    setrender("");
+    setrender2("");
+    setvalue1("");
+    setvalue2("");
+  };
+  const CosButton = () => {
+    setrender2("=" + Math.cos(render));
+  };
+  const TanButton = () => {
+    setrender2("=" + Math.tan(render));
+  };
+  const SinButton = () => {
+    setrender2("=" + Math.sin(render));
+  };
+  const Button7 = () => {
+    setrender(render + 7);
+  };
+  const Button8 = () => {
+    setrender(render + 8);
+  };
+  const Button9 = () => {
+    setrender(render + 9);
+  };
+  const Button4 = () => {
+    setrender(render + 4);
+  };
+  const Button5 = () => {
+    setrender(render + 5);
+  };
+  const Button6 = () => {
+    setrender(render + 6);
+  };
+  const Button1 = () => {
+    setrender(render + 1);
+  };
+  const Button2 = () => {
+    setrender(render + 2);
+  };
+  const Button3 = () => {
+    setrender(render + 3);
+  };
+  const Button0 = () => {
+    setrender(render + 0);
+  };
+  const PeriodButton = () => {
+    setrender(render + ".");
+  };
+
+  const sqrtButton = () => {
+    setrender2("=" + Math.sqrt(render));
+  };
+  const MultiplyButton = () => {
+    setrender(render + "*");
+    setvalue2(value1);
+    setvalue1("");
+  };
+  const SubtractButton = () => {
+    setrender(render + "-");
+    setvalue2(value1);
+    setvalue1("");
+  };
+  const AddButton = () => {
+    setrender(render + "+");
+    setvalue2(value1);
+    setvalue1("");
+  };
+  const DivideButton = () => {
+    setrender(render + "/");
+    setvalue2(value1);
+    setvalue1("");
+  };
+  const EqualsButton = () => {
+    console.log(value1);
+    console.log(value2);
+    setrender("");
+    setrender2("=" + eval(render));
   };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
       <View style={styles.container}>
         <View>
-          <View>
-            <TextInput
-              style={{
-                borderWidth: 5,
-                borderColor: "red",
-                marginTop: 108,
-                width: 183,
-                height: 36,
-                marginLeft: 125,
-              }}
-            />
-          </View>
-          <View>
-            <TextInput
-              style={{
-                borderWidth: 5,
-                borderColor: "red",
-                width: 186,
-                height: 72,
-                marginLeft: 125,
-              }}
-            />
+          <View
+            style={{
+              marginTop: 180,
+              width: 183,
+              height: 36,
+              borderWidth: 5,
+              justifyContent: "flex-end",
+            }}
+          >
+            <CalculatorDisplay Calctext={render} Calctext2={render2} />
           </View>
         </View>
         <View style={{ flexDirection: "row", marginTop: 78 }}>
@@ -46,20 +120,23 @@ export default function App() {
             <View style={{ flexDirection: "row" }}>
               <View>
                 <SpecialFunctionsButtons
-                  text="e"
+                  onPressHandler={CosButton}
+                  text="Cos"
                   innerColor="#303136"
                   textColor="#29A8FF"
                 />
               </View>
               <View style={{ marginLeft: 20 }}>
                 <SpecialFunctionsButtons
-                  text="u"
+                  onPressHandler={TanButton}
+                  text="Tan"
                   innerColor="#303136"
                   textColor="#29A8FF"
                 />
               </View>
               <View style={{ marginLeft: 20 }}>
                 <SpecialFunctionsButtons
+                  onPressHandler={SinButton}
                   text="sin"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -70,13 +147,14 @@ export default function App() {
               <View>
                 <NumberButtons
                   onPressHandler={AcButton}
-                  text="Ac"
+                  text={render !== "" ? "C" : "Ac"}
                   innerColor="#303136"
                   textColor="#29A8FF"
                 />
               </View>
               <View style={{ marginLeft: 20 }}>
                 <NumberButtons
+                  onPressHandler={DelButton}
                   text="del"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -84,6 +162,7 @@ export default function App() {
               </View>
               <View style={{ marginLeft: 20 }}>
                 <NumberButtons
+                  onPressHandler={DivideButton}
                   text="/"
                   innerColor="#005DB2"
                   textColor="#339DFF"
@@ -93,6 +172,7 @@ export default function App() {
             <View style={{ flexDirection: "row", marginTop: 22 }}>
               <View>
                 <NumberButtons
+                  onPressHandler={Button7}
                   text="7"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -100,6 +180,7 @@ export default function App() {
               </View>
               <View style={{ marginLeft: 20 }}>
                 <NumberButtons
+                  onPressHandler={Button8}
                   text="8"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -107,6 +188,7 @@ export default function App() {
               </View>
               <View style={{ marginLeft: 20 }}>
                 <NumberButtons
+                  onPressHandler={Button9}
                   text="9"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -116,6 +198,7 @@ export default function App() {
             <View style={{ flexDirection: "row", marginTop: 16 }}>
               <View>
                 <NumberButtons
+                  onPressHandler={Button4}
                   text="4"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -123,6 +206,7 @@ export default function App() {
               </View>
               <View style={{ marginLeft: 20 }}>
                 <NumberButtons
+                  onPressHandler={Button5}
                   text="5"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -130,6 +214,7 @@ export default function App() {
               </View>
               <View style={{ marginLeft: 20 }}>
                 <NumberButtons
+                  onPressHandler={Button6}
                   text="6"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -139,6 +224,7 @@ export default function App() {
             <View style={{ flexDirection: "row", marginTop: 16 }}>
               <View>
                 <NumberButtons
+                  onPressHandler={Button1}
                   text="1"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -146,6 +232,7 @@ export default function App() {
               </View>
               <View style={{ marginLeft: 20 }}>
                 <NumberButtons
+                  onPressHandler={Button2}
                   text="2"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -153,6 +240,7 @@ export default function App() {
               </View>
               <View style={{ marginLeft: 20 }}>
                 <NumberButtons
+                  onPressHandler={Button3}
                   text="3"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -162,6 +250,7 @@ export default function App() {
             <View style={{ flexDirection: "row", marginTop: 16 }}>
               <>
                 <HorizontalButtons
+                  onPressHandler={Button0}
                   text="0"
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -169,6 +258,7 @@ export default function App() {
               </>
               <View style={{ marginLeft: 20 }}>
                 <NumberButtons
+                  onPressHandler={PeriodButton}
                   text="."
                   innerColor="#303136"
                   textColor="#29A8FF"
@@ -179,13 +269,15 @@ export default function App() {
           <View style={{ marginLeft: 20 }}>
             <View>
               <SpecialFunctionsButtons
-                text="deg"
+                onPressHandler={sqrtButton}
+                text="Sqrt"
                 innerColor="#303136"
                 textColor="#29A8FF"
               />
             </View>
             <View style={{ marginTop: 18 }}>
               <NumberButtons
+                onPressHandler={MultiplyButton}
                 text="*"
                 innerColor="#005DB2"
                 textColor="#339DFF"
@@ -193,6 +285,7 @@ export default function App() {
             </View>
             <View style={{ marginTop: 22 }}>
               <NumberButtons
+                onPressHandler={SubtractButton}
                 text="-"
                 innerColor="#005DB2"
                 textColor="#339DFF"
@@ -200,13 +293,15 @@ export default function App() {
             </View>
             <View style={{ marginTop: 16 }}>
               <VerticalButtons
-                text="-"
+                onPressHandler={AddButton}
+                text="+"
                 innerColor="#005DB2"
                 textColor="#339DFF"
               />
             </View>
             <View style={{ marginTop: 16 }}>
               <VerticalButtons
+                onPressHandler={EqualsButton}
                 text="="
                 innerColor="#1991FF"
                 textColor="#B2DAFF"
