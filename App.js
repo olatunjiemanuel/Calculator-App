@@ -93,14 +93,12 @@ export default function App() {
     setvalue1("");
   };
   const EqualsButton = () => {
-    console.log(value1);
-    console.log(value2);
     setrender("");
     setrender2("=" + eval(render));
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
+    <View style={styles.calculatorContainer}>
       <View style={styles.container}>
         <View>
           <View
@@ -310,11 +308,16 @@ export default function App() {
           </View>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  calculatorContainer: {
+    flex: 1,
+    backgroundColor: "black",
+    paddingTop: 40,
+  },
   container: {
     marginHorizontal: 34,
     flexDirection: "column",
