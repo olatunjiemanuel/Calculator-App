@@ -137,7 +137,7 @@ export default function App() {
               <View style={{ marginLeft: 20 }}>
                 <SpecialFunctionsButtons
                   onPressHandler={SinButton}
-                  text="sin"
+                  text="Sin"
                   innerColor="#303136"
                   textColor="#29A8FF"
                 />

@@ -17,17 +17,12 @@ const styles = StyleSheet.create({
   buttoncontainer: {
     width: 62,
     height: 40,
-    alignItems: "center",
-    justifyContent: "center",
     borderRadius: 24,
+    justifyContent: "center",
   },
   number: {
-    width: 33.53,
-    height: 48,
     fontWeight: "500",
     fontSize: 20,
-    lineHeight: 48,
-    marginTop: 6,
     textAlign: "center",
   },
 });

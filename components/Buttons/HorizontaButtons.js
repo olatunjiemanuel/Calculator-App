@@ -22,12 +22,9 @@ const styles = StyleSheet.create({
     borderRadius: 16,
   },
   number: {
-    width: 20,
-    height: 48,
     fontWeight: "500",
     fontSize: 32,
     lineHeight: 48,
-    marginTop: 6,
   },
 });
 
