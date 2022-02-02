@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, View, Dimensions, Platform } from "react-native";
 
 //components imoports
 import NumberButtons from "./components/Buttons/NumberButtons";
@@ -8,6 +8,8 @@ import SpecialFunctionsButtons from "./components/Buttons/SpecialFunctionsButton
 import HorizontalButtons from "./components/Buttons/HorizontaButtons";
 import VerticalButtons from "./components/Buttons/VerticalButtons";
 import CalculatorDisplay from "./components/CalculatorDisplay";
+
+const { width, height } = Dimensions.get("window");
 
 export default function App() {
   const [render, setrender] = useState("");
@@ -316,10 +318,10 @@ const styles = StyleSheet.create({
   calculatorContainer: {
     flex: 1,
     backgroundColor: "black",
-    paddingTop: 40,
+    paddingTop: Platform.OS == "ios" ? 40 : 0.1 * height,
   },
   container: {
-    marginHorizontal: 34,
+    marginHorizontal: 40,
     flexDirection: "column",
     backgroundColor: "black",
   },
