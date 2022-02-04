@@ -26,7 +26,7 @@ export default function App() {
   const [render2, setrender2] = useState("");
   const [value1, setvalue1] = useState(null);
   const [value2, setvalue2] = useState();
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const toggleSwitch = () => {
     setDarkMode((previousState) => !previousState);
