@@ -11,10 +11,9 @@ const CalculatorDisplay = (props) => {
     >
       <View
         style={{
-          width: 183,
           height: 36,
-          marginLeft: 125,
           justifyContent: "flex-end",
+          borderWidth: 1,
         }}
       >
         <Text
@@ -29,9 +28,8 @@ const CalculatorDisplay = (props) => {
       </View>
       <View
         style={{
-          marginLeft: 10,
-          width: 300,
           height: 72,
+          borderWidth: 1,
         }}
       >
         <Text

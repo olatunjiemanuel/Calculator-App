@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, View, Dimensions, Platform } from "react-native";
+import { StyleSheet, View, Dimensions, Platform, Switch } from "react-native";
 
 //components imoports
 import NumberButtons from "./components/Buttons/NumberButtons";
@@ -9,6 +9,9 @@ import HorizontalButtons from "./components/Buttons/HorizontaButtons";
 import VerticalButtons from "./components/Buttons/VerticalButtons";
 import CalculatorDisplay from "./components/CalculatorDisplay";
 
+// color imports
+import Colors from "./assets/Colors/Colors";
+
 const { width, height } = Dimensions.get("window");
 
 export default function App() {
@@ -16,6 +19,11 @@ export default function App() {
   const [render2, setrender2] = useState("");
   const [value1, setvalue1] = useState(null);
   const [value2, setvalue2] = useState();
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleSwitch = () => {
+    setDarkMode((previousState) => !previousState);
+  };
 
   const AcButton = () => {
     setvalue1("");
@@ -29,6 +37,7 @@ export default function App() {
     setvalue2("");
   };
   const CosButton = () => {
+    darkMode ? setDarkMode(false) : setDarkMode(true);
     setrender2("=" + Math.cos(render));
   };
   const TanButton = () => {
@@ -100,20 +109,38 @@ export default function App() {
   };
 
   return (
-    <View style={styles.calculatorContainer}>
-      <View style={styles.container}>
-        <View>
-          <View
-            style={{
-              marginTop: 180,
-              width: 183,
-              height: 36,
-              borderWidth: 5,
-              justifyContent: "flex-end",
-            }}
-          >
-            <CalculatorDisplay Calctext={render} Calctext2={render2} />
-          </View>
+    <View
+      style={[
+        styles.calculatorContainer,
+        {
+          backgroundColor: darkMode
+            ? Colors.lightTheme.white
+            : Colors.darkTheme.black,
+        },
+      ]}
+    >
+      <View
+        style={[
+          styles.container,
+          {
+            backgroundColor: darkMode
+              ? Colors.lightTheme.white
+              : Colors.darkTheme.black,
+          },
+        ]}
+      >
+        <View style={styles.switchContainer}>
+          <StatusBar style={darkMode ? "dark" : "light"} />
+          <Switch
+            trackColor={{ false: "#767577", true: "#29A8FF" }}
+            thumbColor={darkMode ? "#fff" : "#fff"}
+            ios_backgroundColor="#3e3e3e"
+            onChange={toggleSwitch}
+            value={darkMode}
+          />
+        </View>
+        <View style={{ paddingTop: 120 }}>
+          <CalculatorDisplay Calctext={render} Calctext2={render2} />
         </View>
         <View style={{ flexDirection: "row", marginTop: 78 }}>
           <View>
@@ -317,12 +344,19 @@ export default function App() {
 const styles = StyleSheet.create({
   calculatorContainer: {
     flex: 1,
-    backgroundColor: "black",
+    // backgroundColor: toggleSwitch
+    //   ? Colors.lightTheme.white
+    //   : Colors.lightTheme.black,
     paddingTop: Platform.OS == "ios" ? 40 : 0.1 * height,
   },
   container: {
-    marginHorizontal: 40,
+    paddingHorizontal: 40,
     flexDirection: "column",
-    backgroundColor: "black",
+    // backgroundColor: toggleSwitch
+    //   ? Colors.lightTheme.white
+    //   : Colors.lightTheme.black,
+  },
+  switchContainer: {
+    marginLeft: 250,
   },
 });
