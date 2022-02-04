@@ -1,15 +1,15 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, Pressable } from "react-native";
 
 const NumberButtons = (props) => {
   const { text, innerColor, textColor, onPressHandler } = props;
   return (
-    <TouchableOpacity
+    <Pressable
       onPress={onPressHandler}
       style={[styles.buttoncontainer, { backgroundColor: innerColor }]}
     >
       <Text style={[styles.number, { color: textColor }]}>{text}</Text>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 

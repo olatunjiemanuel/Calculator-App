@@ -16,7 +16,7 @@ const VerticalButtons = (props) => {
 const styles = StyleSheet.create({
   buttoncontainer: {
     width: 62,
-    height: 96,
+    height: 98,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 16,

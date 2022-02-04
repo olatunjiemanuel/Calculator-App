@@ -1,6 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, View, Dimensions, Platform, Switch } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Dimensions,
+  Platform,
+  Switch,
+  Vibration,
+} from "react-native";
 
 //components imoports
 import NumberButtons from "./components/Buttons/NumberButtons";
@@ -37,7 +44,7 @@ export default function App() {
     setvalue2("");
   };
   const CosButton = () => {
-    darkMode ? setDarkMode(false) : setDarkMode(true);
+    Vibration.vibrate();
     setrender2("=" + Math.cos(render));
   };
   const TanButton = () => {
@@ -114,8 +121,8 @@ export default function App() {
         styles.calculatorContainer,
         {
           backgroundColor: darkMode
-            ? Colors.lightTheme.white
-            : Colors.darkTheme.black,
+            ? Colors.general.white
+            : Colors.general.black,
         },
       ]}
     >
@@ -124,8 +131,8 @@ export default function App() {
           styles.container,
           {
             backgroundColor: darkMode
-              ? Colors.lightTheme.white
-              : Colors.darkTheme.black,
+              ? Colors.general.white
+              : Colors.general.black,
           },
         ]}
       >
@@ -142,8 +149,19 @@ export default function App() {
         <View style={{ paddingTop: 120 }}>
           <CalculatorDisplay Calctext={render} Calctext2={render2} />
         </View>
-        <View style={{ flexDirection: "row", marginTop: 78 }}>
-          <View>
+        <View
+          style={{
+            flexDirection: "row",
+            marginTop: 78,
+          }}
+        >
+          <View
+            style={{
+              width: "80%",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <View style={{ flexDirection: "row" }}>
               <View>
                 <SpecialFunctionsButtons
@@ -293,7 +311,15 @@ export default function App() {
               </View>
             </View>
           </View>
-          <View style={{ marginLeft: 20 }}>
+          <View
+            style={{
+              alignSelf: "flex-end",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingLeft: Platform.OS == "ios" ? 10 : null,
+              width: "20%",
+            }}
+          >
             <View>
               <SpecialFunctionsButtons
                 onPressHandler={sqrtButton}
@@ -350,13 +376,13 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS == "ios" ? 40 : 0.1 * height,
   },
   container: {
-    paddingHorizontal: 40,
+    paddingHorizontal: Platform.OS == "ios" ? 40 : 0.1 * width,
     flexDirection: "column",
     // backgroundColor: toggleSwitch
     //   ? Colors.lightTheme.white
     //   : Colors.lightTheme.black,
   },
   switchContainer: {
-    marginLeft: 250,
+    paddingLeft: 250,
   },
 });

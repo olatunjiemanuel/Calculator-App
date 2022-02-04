@@ -1,11 +1,14 @@
 const Colors = {
+  general: {
+    white: "white",
+    black: "black",
+  },
   lightTheme: {
     textBlack: "#424242",
-    white: "white",
-    textBlue: "#29A8FF",
+    buttonTextBlue: "#29A8FF",
   },
   darkTheme: {
-    black: "black",
+    darkInnerColor: "#616161",
   },
 };
 
