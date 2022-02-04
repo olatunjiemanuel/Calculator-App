@@ -6,9 +6,11 @@ const Colors = {
   lightTheme: {
     textBlack: "#424242",
     buttonTextBlue: "#29A8FF",
+    gray: "gray",
   },
   darkTheme: {
     darkInnerColor: "#616161",
+    innerColorDark: "#303136",
   },
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 const CalculatorDisplay = (props) => {
-  const { Calctext, Calctext2 } = props;
+  const { Calctext, Calctext2, Calctext2Color } = props;
   return (
     <View
       style={{
@@ -32,7 +32,7 @@ const CalculatorDisplay = (props) => {
       >
         <Text
           style={{
-            color: "#fff",
+            color: Calctext2Color,
             textAlign: "right",
             fontSize: 48,
           }}

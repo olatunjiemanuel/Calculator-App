@@ -147,7 +147,13 @@ export default function App() {
           />
         </View>
         <View style={{ paddingTop: 120 }}>
-          <CalculatorDisplay Calctext={render} Calctext2={render2} />
+          <CalculatorDisplay
+            Calctext={render}
+            Calctext2={render2}
+            Calctext2Color={
+              darkMode ? Colors.general.black : Colors.general.white
+            }
+          />
         </View>
         <View
           style={{
@@ -167,7 +173,7 @@ export default function App() {
                 <SpecialFunctionsButtons
                   onPressHandler={CosButton}
                   text="Cos"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -175,7 +181,7 @@ export default function App() {
                 <SpecialFunctionsButtons
                   onPressHandler={TanButton}
                   text="Tan"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -183,7 +189,7 @@ export default function App() {
                 <SpecialFunctionsButtons
                   onPressHandler={SinButton}
                   text="Sin"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -193,7 +199,7 @@ export default function App() {
                 <NumberButtons
                   onPressHandler={AcButton}
                   text={render !== "" ? "C" : "Ac"}
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -201,7 +207,7 @@ export default function App() {
                 <NumberButtons
                   onPressHandler={DelButton}
                   text="del"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -219,7 +225,7 @@ export default function App() {
                 <NumberButtons
                   onPressHandler={Button7}
                   text="7"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -227,7 +233,7 @@ export default function App() {
                 <NumberButtons
                   onPressHandler={Button8}
                   text="8"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -235,7 +241,7 @@ export default function App() {
                 <NumberButtons
                   onPressHandler={Button9}
                   text="9"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -245,7 +251,7 @@ export default function App() {
                 <NumberButtons
                   onPressHandler={Button4}
                   text="4"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -253,7 +259,7 @@ export default function App() {
                 <NumberButtons
                   onPressHandler={Button5}
                   text="5"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -261,7 +267,7 @@ export default function App() {
                 <NumberButtons
                   onPressHandler={Button6}
                   text="6"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -271,7 +277,7 @@ export default function App() {
                 <NumberButtons
                   onPressHandler={Button1}
                   text="1"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -279,7 +285,7 @@ export default function App() {
                 <NumberButtons
                   onPressHandler={Button2}
                   text="2"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -287,7 +293,7 @@ export default function App() {
                 <NumberButtons
                   onPressHandler={Button3}
                   text="3"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -297,7 +303,7 @@ export default function App() {
                 <HorizontalButtons
                   onPressHandler={Button0}
                   text="0"
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </>
@@ -305,7 +311,7 @@ export default function App() {
                 <NumberButtons
                   onPressHandler={PeriodButton}
                   text="."
-                  innerColor="#303136"
+                  innerColor={Colors.lightTheme.gray}
                   textColor="#29A8FF"
                 />
               </View>
@@ -324,7 +330,7 @@ export default function App() {
               <SpecialFunctionsButtons
                 onPressHandler={sqrtButton}
                 text="Sqrt"
-                innerColor="#303136"
+                innerColor={Colors.lightTheme.gray}
                 textColor="#29A8FF"
               />
             </View>
