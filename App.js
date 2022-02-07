@@ -8,6 +8,7 @@ import {
   Switch,
   Vibration,
 } from "react-native";
+import Swipeable from "react-native-gesture-handler/Swipeable";
 
 //components imoports
 import NumberButtons from "./components/Buttons/NumberButtons";
@@ -146,15 +147,21 @@ export default function App() {
             value={darkMode}
           />
         </View>
-        <View style={{ paddingTop: 120 }}>
-          <CalculatorDisplay
-            Calctext={render}
-            Calctext2={render2}
-            Calctext2Color={
-              darkMode ? Colors.general.black : Colors.general.white
-            }
-          />
-        </View>
+        <Swipeable
+          renderRightActions={() => {
+            console.log("swiped");
+          }}
+        >
+          <View style={{ paddingTop: 100 }}>
+            <CalculatorDisplay
+              Calctext={render}
+              Calctext2={render2}
+              Calctext2Color={
+                darkMode ? Colors.general.black : Colors.general.white
+              }
+            />
+          </View>
+        </Swipeable>
         <View
           style={{
             flexDirection: "row",
