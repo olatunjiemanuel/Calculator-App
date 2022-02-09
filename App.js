@@ -8,7 +8,7 @@ import {
   Switch,
   Vibration,
 } from "react-native";
-import Swipeable from "react-native-gesture-handler/Swipeable";
+import { Swipeable } from "react-native-gesture-handler";
 
 //components imoports
 import NumberButtons from "./components/Buttons/NumberButtons";
