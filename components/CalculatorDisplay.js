@@ -1,15 +1,11 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Swipeable from "react-native-gesture-handler/Swipeable";
 
 const CalculatorDisplay = (props) => {
   const { Calctext, Calctext2, Calctext2Color } = props;
   return (
-    <View
-      style={{
-        flexDirection: "column",
-      }}
-    >
+    <View>
       <View
         style={{
           height: 70,
